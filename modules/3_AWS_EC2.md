@@ -17,7 +17,7 @@
         * Elastic Block Store (EBS): armazenamento persistente de rede;
         * Elastic File System (EFS): armazenamento de arquivos elastico e escalavel;
         * Instance Store: armazenamento efêmero, temporario;
-* Um *ecutiry group* deve ser relacionado a instancia durante a criação;
+* Um *secutiry group* deve ser relacionado a instancia durante a criação;
 * cada instancia deve ser colocada em uma VPC, availability zone e subnet;
 * comandos de inicialização personalidados podem ser passados para a instancia via *user-data* script;
 * *Tags* devem ser usadas para ajudar a organizar as instancias;
@@ -126,7 +126,7 @@
     * O tipo de EBS influencia na performance de IOPS
 * Initializing:
     * volumes criados de um EBS snapshot devem ser inicializados;
-    * Ocorre na primeira vez que o bloco armazenado pe lido - a performance pode ser imactada em 50%
+    * Ocorre na primeira vez que o bloco armazenado é lido - a performance pode ser impactada em 50%
     * Evitar isso em produção, lendo manualmente todos os blocos;
 
 * **EBS Types**:
@@ -139,7 +139,7 @@
         * Mais barato e com menor desempenho
         * acesso menos frequente
     * EBS Magnetico:
-        * Baixo custo para armazenamento
+        * Baixo custo de performance para armazenamento
         * Usado para cargas de trabalho onde a performance é importante;
 
 * **EC2 Store Volumes**:
@@ -182,8 +182,8 @@
 ### <span style="color: #ff5733 ">Elastic Load Balancers and Session State</span>
 
 * **Elastic Load Balancer (ELB)**:
-    * Utilizado para distribuir trafico entre os servidores
-    * serviço automatizado de processos distribuindo o trafico de eventos para todas as instancias associadas as ELB, mesmo que localizadas em multiplas AZs;
+    * Utilizado para distribuir tráfego entre os servidores
+    * serviço automatizado de processos distribuindo o tráfego de eventos para todas as instancias associadas as ELB, mesmo que localizadas em multiplas AZs;
     *  *Estado de sessão*:
         * ELB Option 1: Load Balancer Generated Cookie Stickiness:
             * gera cookie se o usuário não tem
@@ -213,8 +213,51 @@
 
 <span style="color: #2980b9 ">**QUIZ**</span>
 
-**1**: a
-    * a
+**1**: Which of the following statements is true about the Elastic File System (EFS)?
+
+* EFS can be used by multiple EC2 instances simultaneously (Correct! Multiple EC2 instances can all use EFS at the same time! It isn't a volume that can only be attached to a single EC2 instance.)
+
+**2**: EC2 instances are launched from Amazon Machine Images (AMIs). A given public AMI: 
+
+* Can only be used to launch EC2 instances in the same AWS region as the AMI is stored. (AMIs are only available in the region they are created. Even in the case of the AWS-provided AMIs, AWS has actually copied the AMIs for you to different regions. You cannot access an AMI from one region in another region. However, you can copy an AMI from one region to another
+
+* <span style="color:  #c0392b ">Can be used to launch EC2 instances in any AWS region (Sorry! AMIs are only available in the region they are created. Even in the case of the AWS-provided AMIs, AWS has actually copied the AMIs for you to different regions. You cannot access an AMI from one region in another region. However, you can copy an AMI from one region to another)</span>
+
+**3**: After having created a new Linux instance on Amazon EC2, and downloaded the .pem file (called my_key.pem ) you try and SSH into your IP address (52.2.222.22) using the following command.
+
+ssh -i my_key.pem ec2-user@52.2.222.22
+
+However you receive the following error.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @ WARNING: UNPROTECTED PRIVATE KEY FILE! @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+What is the most probable reason for this and how can you fix it?
 
 
-* <span style="color:  #c0392b ">ERROR</span>
+*  Your key file must not be publicly viewable for SSH to work. You need to modify your .pem file to limit permissions. (Correct! You need to run something like: chmod 400 my_key.pem)
+
+* <span style="color:  #c0392b ">You do not have root access on your terminal and need to use the sudo option for this to work. (Sorry! You probably need to limit the permissions on your pem key more. You can do that with: chmod 400 my_key.pem)</span>
+
+**4**: You're writing a script with an AWS SDK that uses the AWS API Actions. You want to create AMIs for non-EBS backed AMIs. Which API call should occur in the final process of creating an AMI?
+
+* RegisterImage (https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html)
+
+**5**: Which API call could be used to specify the images (AMIs, AKIs, and ARIs) that are available?
+
+* DescribeImages
+
+**6**: When dealing with session state in EC2-based applications using Elastic load balancers which option is generally thought of as the best practice for managing user sessions?
+
+* Having the ELB distribute traffic to all EC2 instances and then having the instance check a caching solution like ElastiCache running Redis or Memcached for session information (Correct! The ELB will balance the traffic to the instances , and the in memory caching solution will separate the session information from specific instances with good performance.)
+
+**7**: What is one key difference between an Amazon EBS-backed and an instance-store backed instance?
+
+* Amazon EBS-backed instances can be stopped and restarted without losing data (Correct! EBS-based instances can be stopped and restarted without losing userdata. Instance-store backed images use "ephemeral" storage (temporary). The storage is only available during the life of an instance. Rebooting an instance will allow ephemeral data stay persistent. However, stopping and starting an instance will remove all ephemeral storage.)
+
+**8**: Which of the following situations cause a loss of data for an EC2 Instance store?
+
+* The instance is stopped.
+* The instance is terminated.
+* This instance store disk fails.
+
+* <span style="color:  #c0392b ">The instance is rebooted. (Incorrect. Data in the instance store is lost when the underlying disk drive fails, the instance stops, or the instance terminates. Data on an instance store survives a reboot.)</span>
