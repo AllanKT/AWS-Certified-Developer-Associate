@@ -3,11 +3,11 @@
 - [X] The Basics of AWS
 - [X] AWS Identity and Access Management
 - [X] Elastic Compute Cloud
-- [ ] Amazon Virtual Private Cloud (VPC) Fundamentals
-- [ ] AWS Load Balancing
-- [ ] AWS Lambda
-- [ ] AWS Elastic Container Service
-- [ ] AWS Elastic Beanstalk
+- [X] Amazon Virtual Private Cloud (VPC) Fundamentals
+- [X] AWS Load Balancing
+- [X] AWS Lambda
+- [X] AWS Elastic Container Service
+- [X] AWS Elastic Beanstalk
 - [ ] Amazon S3
 - [ ] AWS CloudFront
 - [ ] DynamoDB
