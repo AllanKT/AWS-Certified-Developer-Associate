@@ -34,10 +34,19 @@
 
 ### <span style="color: #ff5733 ">Dynamic Ports</span>
 
----
-# <span style="color:#900C3F">AWS Certified Developer - Associate Level</span>
-## <span style="color:#884ea0 ">**MODULE**</span> 
-## <span style="color:#FFC300 ">MODULE</span> 
-### <span style="color: #ff5733 ">CLASS</span>
-<span style="color: #2980b9 ">**QUIZ**</span>
-* <span style="color:  #c0392b ">ERROR</span>
+* Classic Load Balancer não suporta portas dinamicas
+* NLB e ALB suportam portas dinamicas
+
+* Utilizando Docker containers, Amazon ECS rodando multiplas aplicações em uma unica instancia onde cada container roda na porta 80, para cada um deles é configuradas no *tagert group* uma lista de portas (*port mapping*), mapeando portas aleatorias, que apontam para a porta 80 desses containers, aceitando e realizando as ligações entre os load balancers;
+
+* Uma unica EC2 pode rodar multiplos containers;
+
+* Cada uma dos containers recebe uma mapeamento aleatorio de uma porta;
+
+* Os números dessas portas aleatorias, não são estáticos, podendo ser alterados, em redeploys, etc. Se um container é reiniciado, ou desligado, ele receberá um novo número de porta;
+
+* Dynamic Ports são configuradas no Target Group;
+
+* o Target Group mapeia a lista de portas, aceitando o trafego para cada instancia e usa um load balancer para distribuir o trafego uniformemente através das portas;
+
+* Devido ao Dynamic Ports, NLB e ALB são ideais para rotear o trafego para services conteinerizados (Docker, ECS);

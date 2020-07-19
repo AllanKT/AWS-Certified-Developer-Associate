@@ -59,7 +59,7 @@ and:aws:<service>:<region || null>:<account number>:<resource from service>
     * *Example*: Uso temporario de roles dos recursos e contas AWS, através de Active Director, serviços sing-on (facebook, google, etc) por uma role "Identity Provider Access";
         * criar *Cross Account* acesso de uma conta utiliza recursos através de outra conta;
 
-### <span style="color: #ff5733 ">Security Token Service</span>
+### <span style="color: #ff5733 ">Security Token Service (STS)</span>
 
 * STS (Security Token Service): Permite criar credenciais temporarias com concessão confiavel aos recursos AWS;
 * São credenciais de curto prazo, ativas por alguns minutos ou várias horas;
