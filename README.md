@@ -8,10 +8,10 @@
 - [X] AWS Lambda
 - [X] AWS Elastic Container Service
 - [X] AWS Elastic Beanstalk
-- [ ] Amazon S3
-- [ ] AWS CloudFront
-- [ ] DynamoDB
-- [ ] Other AWS Database Services
+- [X] Amazon S3
+- [X] AWS CloudFront
+- [X] DynamoDB
+- [X] Other AWS Database Services
 - [ ] Amazon Simple Notification Service (SNS)
 - [ ] Amazon Simple Queue Service (SQS)
 - [ ] Amazon Simple Workflow Service (SWF)
@@ -23,7 +23,3 @@
 - [ ] Developer Associate - Core Concepts Review
 - [ ] Repos, Deployment, Builds, and CI/CD Pipelines
 - [ ] Final Steps
-
-
-
-

@@ -3,6 +3,13 @@
 ## <span style="color:#884ea0 ">**Identity & Access Management for your AWS Account**</span> 
 ## <span style="color:#FFC300 ">AWS Identity and Access Management</span> 
 ---
+### <span style="color: #ff5733 ">Observations:</span>
+* **Get Session Token**: Credenciais temporárias para usuários em ambientes não confiáveis
+* **Get Fedaration Token**: Federação através de um agente de identidade personalizado
+* **Assume Role**: Delegação entre contas e federação por meio de um broker de identidade personalizado
+* **Assume Role With SAML**: Federação por meio de um provedor de identidade corporativa compatível com SAML 2.0
+* **Assume Role With Web Identity**: Federação através de um provedor de identidade baseado na Web
+---
 ### <span style="color: #ff5733 ">IAM Essentials</span> 
 
 * **IAM (Identity & Access Management)**: gerencia usuaários, grupos, e regras de acesso;
