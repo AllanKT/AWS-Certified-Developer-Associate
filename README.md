@@ -12,12 +12,12 @@
 - [X] AWS CloudFront
 - [X] DynamoDB
 - [X] Other AWS Database Services
-- [ ] Amazon Simple Notification Service (SNS)
-- [ ] Amazon Simple Queue Service (SQS)
-- [ ] Amazon Simple Workflow Service (SWF)
-- [ ] AWS Step Functions
-- [ ] API Gateway
-- [ ] CloudWatch
+- [X] Amazon Simple Notification Service (SNS)
+- [X] Amazon Simple Queue Service (SQS)
+- [X] Amazon Simple Workflow Service (SWF)
+- [X] AWS Step Functions
+- [X] API Gateway
+- [X] CloudWatch
 - [ ] Amazon CloudFormation
 - [ ] Systems Manager Parameter Store
 - [ ] Developer Associate - Core Concepts Review
