@@ -18,7 +18,7 @@
 - [X] AWS Step Functions
 - [X] API Gateway
 - [X] CloudWatch
-- [ ] Amazon CloudFormation
+- [X] Amazon CloudFormation
 - [ ] Systems Manager Parameter Store
 - [ ] Developer Associate - Core Concepts Review
 - [ ] Repos, Deployment, Builds, and CI/CD Pipelines

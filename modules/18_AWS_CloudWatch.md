@@ -6,7 +6,7 @@
 ### <span style="color: #ff5733 ">CloudWatch Essentials</span>
 
 * usado para monitorar serviços AWS (EC2, ELB, S3, etc)
-* monitora o ambiente com configurações e visualiza metricas especificas por cadas serviço
+* monitora o ambiente com configurações e visualiza metricas especificas por cada serviço
 
 * *Detailed vs Basic Level Monitoring*:
     * *Basic*: dado disponibilizado automatiamente a cada 5 minutos
@@ -14,12 +14,3 @@
 
 * Alarmes podem criar gatilhos ou outra ação na conta AWS, como SNS, baseado nas metricas obtidas
 * Auto Scaling utiliza cloudwatch passando limites e alarmes para triggers que adicionam ou removem instancias do auto scaling group
-
----
-
-# <span style="color:#900C3F">AWS Certified Developer - Associate Level</span>
-## <span style="color:#884ea0 ">**MODULE**</span>
-## <span style="color:#FFC300 ">MODULE</span>
-### <span style="color: #ff5733 ">CLASS</span>
-<span style="color: #2980b9 ">**QUIZ**</span>
-* <span style="color:  #c0392b ">ERROR</span>
